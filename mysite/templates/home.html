@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <div id="container" style="width: 75%;">
+    <canvas id="bar-chart" data-url="{% url 'bar-chart' %}"></canvas>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+  <script>
+
+    $(function () {
+
+      var $barChart = $("#bar-chart");
+      $.ajax({
+        url: $barChart.data("url"),
+        success: function (data) {
+
+          var ctx = $barChart[0].getContext("2d");
+
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: 'Appearances on FIFA World Cup',
+                backgroundColor: 'blue',
+                data: data.data
+              }]          
+            },
+            options: {
+              responsive: true,
+              legend: {
+                position: 'top',
+              },
+              title: {
+                display: true,
+                text: 'Appearances Bar Chart'
+              },
+              scaleShowValues: true,
+              scales: {
+                xAxes: [{
+                  barThickness: 6,  // number (pixels) or 'flex'
+                  maxBarThickness: 8, // number (pixels)
+                  ticks: {
+                    autoSkip: false
+                  }
+                }]
+              },
+              layout: {
+                padding: 20
+              }
+            }
+          });
+
+        }
+      });
+
+    });
+
+  </script>
+
+{% endblock %}
