@@ -2,7 +2,7 @@
 
 [![Python Version](https://img.shields.io/badge/python-3.9.1-brightgreen.svg)](https://python.org)
 [![Django Version](https://img.shields.io/badge/django-3.0.2-brightgreen.svg)](https://djangoproject.com)
-[![Pandas Version]((https://img.shields.io/badge/pandas-1.2.4-brightgreen.svg))](https://pandas.pydata.org)
+[![Pandas Version](https://img.shields.io/badge/pandas-1.2.4-brightgreen.svg)](https://pandas.pydata.org)
 
 Code example based on the tutorials [How to Use Chart.js with Django](https://simpleisbetterthancomplex.com/tutorial/2020/01/19/how-to-use-chart-js-with-django.html) and [Django, Pandas and Chart.js for a quick dashboard](https://towardsdatascience.com/django-pandas-and-chart-js-for-a-quick-dashboard-e261bce38bee).
 
